@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -34,5 +35,12 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping("/usersList")
+    public List<User> getUsersList(){
+        List<User> users;
+        users = userService.getAll();
+        return users;
+
+    }
 
 }
