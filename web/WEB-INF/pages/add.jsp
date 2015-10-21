@@ -2,26 +2,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<link href="css/bootstrap.css" rel="stylesheet" media="screen" />
-<link href="css/bootstrap-theme.css" rel="stylesheet" media="screen" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="css/prettify.css" />
-<link rel="stylesheet" type="text/css" href="css/bootstraphtml5.css" />
+<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen" />
+<link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 
+    <style type="text/css">
+        #centerLayer {
+            margin-left: 40%; /* Отступ слева */
+            margin-top: 5%;
+            width: 100%; /* Ширина слоя */
+            background: white; /* Цвет фона */
+            padding: 10px; /* Поля вокруг текста */
+            border: none;
+        }
 
-<script type="text/javascript">
+        #centerForm{
+            margin-left: 0%;
+        }
+    </style>
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-30181385-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
 </head>
 
 <body>
@@ -33,8 +34,8 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Sign Up <span class="sr-only">(current)</span></a></li>
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/enter.jsp">Sign In <span class="sr-only">(current)</span></a></li>
+               <%-- <li class="btn-large"><a href="${pageContext.request.contextPath}/registr.jsp">Sign Up <span class="sr-only">(current)</span></a></li>--%>
+               <%-- <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Sign In <span class="sr-only">(current)</span></a></li>--%>
                 <!-- <li class="btn-large"><a href="${pageContext.request.contextPath}/editor.jsp">Editor<span class="sr-only">(current)</span></a></li> -->
             </ul>
             <form class="navbar-form navbar-left navbar-right" role="search">
@@ -46,6 +47,38 @@
         </div>
     </div>
 </nav>
- <p>User "${user.name}" successfully added!</p>
+
+<div id="centerLayer">
+    <h1><p>User "${user.name}" successfully added!</p></h1>
+    <h2>Please Log In</h2>
+    <div id="centerForm" >
+        <form  action="${pageContext.request.contextPath}/enter.htm" method="post" role="form" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="email" placeholder="Login/Email">
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br/><br/>
+            <button type="submit" class="btn btn-success">Sign In</button>
+        </form>
+        <%--        <form action="${pageContext.request.contextPath}/j_spring_security_check" method="post" role="form" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="j_username" placeholder="Login/Email">
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="j_password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" class="form-control" name="_spring_security_remember_me" placeholder="Password">
+                    </div>
+                    <br/><br/>
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                </form>--%>
+    </div>
+</div>
+
 </body>
 </html>

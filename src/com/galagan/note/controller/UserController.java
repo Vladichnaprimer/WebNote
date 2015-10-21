@@ -1,17 +1,13 @@
 package com.galagan.note.controller;
 
-import com.galagan.note.domain.Note;
 import com.galagan.note.domain.User;
 import com.galagan.note.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,12 +19,12 @@ public class UserController {
     @RequestMapping("/add")
     public ModelAndView addUser(@ModelAttribute User user)  {
         userService.save(user);
-        ModelAndView modelAndView  = new ModelAndView("add");
+        ModelAndView modelAndView  = new ModelAndView("/add");
         return modelAndView;
     }
 
     @RequestMapping("/enter")
-    public ModelAndView loginUser(@ModelAttribute User user) {
+    public ModelAndView loginUser(@ModelAttribute User user){
         User us = userService.get(user);
         ModelAndView modelAndView = new ModelAndView("profile");
         modelAndView.addObject("user",us);
@@ -37,10 +33,7 @@ public class UserController {
 
     @RequestMapping("/usersList")
     public List<User> getUsersList(){
-        List<User> users;
-        users = userService.getAll();
-        return users;
-
+         return null;
     }
 
 }
