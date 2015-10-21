@@ -28,7 +28,7 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top navbar-fixed-top">
     <div class="nav navbar-nav">
         <a class="navbar-brand" href="#">WebNote</a>
     </div>

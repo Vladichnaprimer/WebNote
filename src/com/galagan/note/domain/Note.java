@@ -21,13 +21,13 @@ public class Note {
     private String title;
 
     @Column
-    private Boolean done;
+    private boolean done;
 
-    public Boolean getDone() {
+    public boolean getDone() {
         return done;
     }
 
-    public void setDone(Boolean done) {
+    public void setDone(boolean done) {
         this.done = done;
     }
 

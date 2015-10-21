@@ -26,9 +26,9 @@ public class NoteController {
     }
 
     @RequestMapping("/markNote/{id}")
-    public void markNote(@PathVariable("id") Note note){
-        noteService.get(note).getId();
-        noteService.update(note);
+    public void markNote(@ModelAttribute("id") Note note){
+        Note n = noteService.get(note);
+        noteService.update(n);
     }
 
     @RequestMapping("/profile")

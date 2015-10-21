@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <!DOCTYPE html>
 
 <html>
@@ -52,8 +53,10 @@
                 <ul class="nav navbar-nav">
                     <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Back <span class="sr-only">(current)</span></a></li>
                   <!--  <li class="btn-large"><a href="${pageContext.request.contextPath}/editor.jsp">Editor<span class="sr-only">(current)</span></a></li>-->
-                    <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create<span class="sr-only">(current)</span></a></li>
-
+                    <sec:authorize access="!isAuthenticated()">
+                        <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create<span
+                                class="sr-only">(current)</span></a></li>
+                    </sec:authorize>
                 </ul>
                 <form class="navbar-form navbar-left navbar-right" role="search">
                     <div class="form-group">
@@ -78,6 +81,20 @@
       <br/><br/>
       <button type="submit" class="btn btn-success">Sign In</button>
    </form>
+<%--        <form action="${pageContext.request.contextPath}/j_spring_security_check" method="post" role="form" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="j_username" placeholder="Login/Email">
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="password" class="form-control" name="j_password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="form-control" name="_spring_security_remember_me" placeholder="Password">
+            </div>
+            <br/><br/>
+            <button type="submit" class="btn btn-success">Sign In</button>
+        </form>--%>
    </div>
 </div>
 
