@@ -10,12 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class NoteServiceImpl implements NoteService{
 
     @Autowired
     private NoteDao noteDao;
 
-    @Transactional
+   
     public void save(Note note) {
         noteDao.save(note);
     }

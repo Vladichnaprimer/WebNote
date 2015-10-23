@@ -4,32 +4,17 @@
 
 <html>
   <head>
-      <link href="css/styles.css" rel="stylesheet">
     <title>Sign Up</title>
-     <%-- <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen" />
+      <link href="css/bootstrap.css" rel="stylesheet">
       <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
-      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+      <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
-
-      <style type="text/css">
-          #centerLayer {
-              margin-left: 40%; /* Отступ слева */
-              margin-top: 5%;
-              width: 100%; /* Ширина слоя */
-              background: white; /* Цвет фона */
-              padding: 10px; /* Поля вокруг текста */
-              border: none;
-          }
-          #centerForm{
-              margin-left: 0%;
-          }
-      </style>--%>
   </head>
 
   <body>
 
- <%-- <nav class="navbar navbar-default navbar-static-top">
+  <nav class="navbar navbar-default navbar-static-top">
       <div class="nav navbar-nav">
           <a class="navbar-brand" href="#">WebNote</a>
       </div>
@@ -40,7 +25,7 @@
               </ul>
           </div>
       </div>
-  </nav>--%>
+  </nav>
 <div id="container">
 
     <form  action="${pageContext.request.contextPath}/add.htm" method="post" role="form" class="form-inline">

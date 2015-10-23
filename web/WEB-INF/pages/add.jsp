@@ -3,52 +3,29 @@
 <html>
 
 <head>
-    <link href="css/styles.css" rel="stylesheet">
-<%--<link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen" />
-<link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
-
-    <style type="text/css">
-        #centerLayer {
-            margin-left: 40%; /* Отступ слева */
-            margin-top: 5%;
-            width: 100%; /* Ширина слоя */
-            background: white; /* Цвет фона */
-            padding: 10px; /* Поля вокруг текста */
-            border: none;
-        }
-
-        #centerForm{
-            margin-left: 0%;
-        }
-    </style>--%>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 
 </head>
 
 <body>
 
-<%--<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="nav navbar-nav">
         <a class="navbar-brand" href="#">WebNote</a>
     </div>
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-               &lt;%&ndash; <li class="btn-large"><a href="${pageContext.request.contextPath}/registr.jsp">Sign Up <span class="sr-only">(current)</span></a></li>&ndash;%&gt;
-               &lt;%&ndash; <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Sign In <span class="sr-only">(current)</span></a></li>&ndash;%&gt;
-                <!-- <li class="btn-large"><a href="${pageContext.request.contextPath}/editor.jsp">Editor<span class="sr-only">(current)</span></a></li> -->
+                <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create <span class="sr-only">(current)</span></a></li>
             </ul>
-            <form class="navbar-form navbar-left navbar-right" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" >
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
         </div>
     </div>
-</nav>--%>
+</nav>
+
 
 <div id="container">
     <h1><p>User "${user.name}" successfully added!</p></h1>

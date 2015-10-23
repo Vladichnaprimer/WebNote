@@ -5,9 +5,9 @@
 <html>
 <head>
     <title>Editor</title>
-    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 
@@ -37,8 +37,6 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/registr.jsp">Sign Up <span class="sr-only">(current)</span></a></li>
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Sign In<span class="sr-only">(current)</span></a></li>
                 <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create<span class="sr-only">(current)</span></a></li>
 
             </ul>
@@ -47,11 +45,14 @@
 </nav>
 
 <div class="container">
+    <form action="${pageContext.request.contextPath}/editor.htm" method="post" role="form" class="form-inline">
     <div class="hero-unit" style="margin-top:60px">
         <h1 style="font-size:58px">WebNotes <small>Edit your notes</small></h1>
         <hr/>
-        <textarea class="textarea" placeholder="Enter text ..." style="width: 830px; height: 500px"></textarea>
+        <textarea class="textarea" placeholder="Enter text ..." style="width: 830px; height: 200px"></textarea>
     </div>
+    <button style="width: 15% " type="submit" class="btn btn-success">Save</button>
+    </form>
 </div>
 
 </body>

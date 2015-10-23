@@ -25,6 +25,11 @@ public class NoteController {
         return modelAndView;
     }
 
+    @RequestMapping("/editor")
+    public void updateNote(@ModelAttribute Note note){
+        noteService.update(note);
+    }
+
     @RequestMapping("/markNote/{id}")
     public void markNote(@ModelAttribute("id") Note note){
         Note n = noteService.get(note);

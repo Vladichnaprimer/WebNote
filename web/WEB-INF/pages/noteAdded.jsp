@@ -6,9 +6,9 @@
 <html>
 <head>
     <title>Enter</title>
-    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen" />
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 

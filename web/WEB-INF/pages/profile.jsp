@@ -5,40 +5,29 @@
 <head>
     <script type="text/javascript" rel="javascript"
             src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
-    <link href="css/styles.css" rel="stylesheet">
-    <title></title>
-<%--
-    <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen"/>
-    <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css"/>
---%>
 
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 
 </head>
 <body>
 
-<%--<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top">
     <div class="nav navbar-nav">
         <a class="navbar-brand" href="#">WebNote</a>
     </div>
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/index.jsp">Sign In<span
-                        class="sr-only">(current)</span></a></li>
-               &lt;%&ndash; <sec:authorize access="isAuthenticated()">
-                    <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create<span
-                            class="sr-only">(current)</span></a></li>
-                </sec:authorize>&ndash;%&gt;
-                <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create<span
-                        class="sr-only">(current)</span></a></li>
+                <li class="btn-large"><a href="${pageContext.request.contextPath}/createNote.jsp">Create <span class="sr-only">(current)</span></a></li>
             </ul>
         </div>
     </div>
-</nav>--%>
+</nav>
 <%--
 <script type="text/javascript">
     function markItem(id, done) {

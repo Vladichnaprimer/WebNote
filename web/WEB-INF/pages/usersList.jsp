@@ -7,11 +7,11 @@
   <script type="text/javascript" rel="javascript"
           src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
   <title></title>
-  <link href="${pageContext.request.contextPath}/css/bootstrap.css" rel="stylesheet" media="screen"/>
-  <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen"/>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css"/>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css"/>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap-theme.css" rel="stylesheet" media="screen" />
+    <%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />--%>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css" />
 
 </head>
 <body>
