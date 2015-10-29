@@ -32,16 +32,13 @@ public class UserDaoImpl implements UserDao {
         session.getTransaction().commit();
         if(session.isOpen())
             session.close();
-
-
     }
 
     public User get(User user) {
         Session session = sessionFactory.openSession();
         List<User> users;
-        Query query = session.createQuery("from User u where u.email = :email and u.password= :password");
+        Query query = session.createQuery("from User u where u.email = :email");
         query.setParameter("email", user.getEmail());
-        query.setParameter("password", user.getPassword());
         users = query.list();
         if(users.isEmpty()){
             return null;
@@ -52,7 +49,6 @@ public class UserDaoImpl implements UserDao {
     public List<User> getAll() {
         Session session = sessionFactory.openSession();
         return session.createCriteria(User.class).list();
-
     }
 
     public void update(User user){
@@ -62,10 +58,5 @@ public class UserDaoImpl implements UserDao {
         session.getTransaction().commit();
         if(session.isOpen())
             session.close();
-
-
-
     }
-
-
 }

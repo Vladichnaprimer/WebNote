@@ -21,7 +21,6 @@ public class NoteDaoImpl implements NoteDao {
         session.beginTransaction();
         session.save(note);
         session.getTransaction().commit();
-
     }
 
     public void delete(Note note) {
@@ -34,9 +33,8 @@ public class NoteDaoImpl implements NoteDao {
     public Note get(Note note) {
         Session session = sessionFactory.openSession();
         List<Note> notes;
-        Query query = session.createQuery("from User u where u.name = :title and u.password= :text");
-        query.setParameter("title", note.getTitle());
-        query.setParameter("text", note.getText());
+        Query query = session.createQuery("from Note n where n.id = :id");
+        query.setParameter("id", note.getId());
         notes = query.list();
         if(notes.isEmpty()){
             return null;

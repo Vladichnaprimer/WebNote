@@ -1,13 +1,23 @@
 package com.galagan.note.domain;
 
+
+import org.hibernate.annotations.ForeignKey;
+import org.hibernate.annotations.Type;
+import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table
-public class User {
+@Component
+@Transactional
+public class User  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +29,7 @@ public class User {
     @Column
     private String email;
 
+
     @Column
     private String password;
 
@@ -26,23 +37,11 @@ public class User {
     @OneToMany(mappedBy = "userId")
     private List<Note> noteList;
 
-    public List<Note> getNoteList() {
-        return noteList;
-    }
-
-    public void setNoteList(List<Note> noteList) {
-        this.noteList = noteList;
-    }
+    @Column(name = "id_role")
+    @Enumerated
+    private UserRole idRole = UserRole.ROLE_USER;
 
     public User() {
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public User(Long id) {
@@ -53,6 +52,29 @@ public class User {
         this.name = name;
     }
 
+    public UserRole getIdRole() {
+        return idRole;
+    }
+
+    public void setIdRole(UserRole idRole) {
+        this.idRole = idRole;
+    }
+
+    public List<Note> getNoteList() {
+        return noteList;
+    }
+
+    public void setNoteList(List<Note> noteList) {
+        this.noteList = noteList;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public Long getId() {
         return id;

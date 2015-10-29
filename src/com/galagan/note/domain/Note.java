@@ -1,9 +1,12 @@
 package com.galagan.note.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
 @Table
+@Component
 public class Note {
 
     @Id
@@ -13,15 +16,22 @@ public class Note {
     @Column
     private String text;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_user")
-    private User userId;
-
     @Column
     private String title;
 
     @Column
     private boolean done;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_user")
+    private User userId;
+
+    public Note() {
+    }
+
+    public Note(long id){
+        this.id = id;
+    }
 
     public boolean getDone() {
         return done;

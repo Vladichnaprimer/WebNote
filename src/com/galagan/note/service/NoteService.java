@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface NoteService {
 
-
     void save(Note note);
 
     void delete(Note note);

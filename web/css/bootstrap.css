@@ -29,7 +29,7 @@ figcaption,
 figure,
 footer,
 header,
-hgroup,
+/*hgroup,*/
 main,
 menu,
 nav,
@@ -2949,7 +2949,7 @@ select[multiple].input-lg {
   }
   .form-inline .radio,
   .form-inline .checkbox {
-    display: inline-block;
+    display: inline-table;
     margin-top: 0;
     margin-bottom: 0;
     vertical-align: middle;
@@ -2960,7 +2960,7 @@ select[multiple].input-lg {
   }
   .form-inline .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"] {
-    position: relative;
+    position: static;
     margin-left: 0;
   }
   .form-inline .has-feedback .form-control-feedback {
@@ -2977,7 +2977,7 @@ select[multiple].input-lg {
 }
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 27px;
+  min-height: 10px;
 }
 .form-horizontal .form-group {
   margin-left: -15px;
@@ -3518,6 +3518,9 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-block + .btn-block {
   margin-top: 5px;
+}
+input:required:invalid {
+  border:1px solid red;
 }
 input[type="submit"].btn-block,
 input[type="reset"].btn-block,
@@ -6305,7 +6308,7 @@ button.close {
 .carousel-inner > .item > a > img {
   line-height: 1;
 }
-@media all and (transform-3d), (-webkit-transform-3d) {
+@media all  {
   .carousel-inner > .item {
     -webkit-transition: -webkit-transform 0.6s ease-in-out;
     -o-transition: -o-transform 0.6s ease-in-out;
@@ -7003,7 +7006,7 @@ a#account_tab:hover{
   font-weight: bold;
   font-size: 1.000em;
   text-align: center;
-  background-image: url("../../src/com/galagan/note/webapp/img/fbline.png");
+ /* background-image: url("../../src/com/galagan/note/webapp/img/fbline.png");*/
   background-repeat: no-repeat;
   background-position: 4px center;
   cursor: pointer;

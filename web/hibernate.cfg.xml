@@ -11,9 +11,10 @@
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/notes</property>
 
-        <property name="hibernate.hbm2ddl.auto">create</property>
+
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>-->
 
+       <!-- <property name="hibernate.hbm2ddl.auto">create</property>-->
         <property name="show_sql">true</property>
 
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -22,6 +23,10 @@
 
          <mapping class="com.galagan.note.domain.Note" />
          <mapping class="com.galagan.note.domain.User" />
+
+         <mapping class="com.galagan.note.controller.UserController" />
+         <mapping class="com.galagan.note.service.UserServiceImpl"/>
+
 
     </session-factory>
 </hibernate-configuration>

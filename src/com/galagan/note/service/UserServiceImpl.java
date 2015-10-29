@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-public class UserServiceImpl implements UserService, UserDetailsService{
+public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserDao userDao;
@@ -45,19 +45,4 @@ public class UserServiceImpl implements UserService, UserDetailsService{
         userDao.update(user);
     }
 
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User user = new User();
-        user.setName("vladich");
-        User u = get(user);
-        Set<GrantedAuthority> roles = new HashSet();
-        roles.add(new SimpleGrantedAuthority(user.getName()));
-
-        UserDetails userDetails =
-                new org.springframework.security.core.userdetails.User(user.getEmail(),
-                        user.getPassword(),
-                        roles);
-
-        return userDetails;
-    }
 }

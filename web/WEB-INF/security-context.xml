@@ -3,21 +3,42 @@
              xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/security
-http://www.springframework.org/schema/security/spring-security.xsd"
-        >
+                                http://www.springframework.org/schema/beans/spring-beans.xsd
+                                http://www.springframework.org/schema/security
+                                http://www.springframework.org/schema/security/spring-security.xsd"
+             >
 
-       <http auto-config="true">
-              <intercept-url pattern="/admin**" access="ROLE_USER" />
-       </http>
+    <http auto-config="true" use-expressions="true">
 
-       <authentication-manager>
-              <authentication-provider>
-                     <user-service>
-                            <user name="mkyong" password="123456" authorities="ROLE_USER" />
-                     </user-service>
-              </authentication-provider>
-       </authentication-manager>
+        <intercept-url pattern="/profile**" access="permitAll"/>
+
+        <form-login
+                login-page="/index.htm"
+                default-target-url="/profile.htm"
+                authentication-failure-url="/index.htm?error=1"
+                username-parameter="email"
+                password-parameter="password"
+                />
+
+        <form-login />
+
+        <logout logout-success-url="/index.htm?logout" />
+
+        <access-denied-handler error-page="/403"/>
+        <csrf/>
+        <remember-me />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="SELECT email, password, enabled  FROM USER u WHERE u.email = ? "
+                               authorities-by-username-query="select r.role, u.email from user u, role r
+                               where u.id_role = r.id_role and u.email = ?"
+                    />
+        </authentication-provider>
+    </authentication-manager>
+
+
 
 </beans:beans>

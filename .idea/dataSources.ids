@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - notes@localhost" uuid="f2add6ac-b7c9-4714-bdae-7b63d10e678c">
+  <data-source name="MySQL - notes@localhost" uuid="f2add6ac-b7c9-4714-bdae-7b63d10e678c">
     <database-info product="MySQL" version="5.6.27-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -1085,10 +1085,18 @@
       <foreign-key name="FK_m7qyxwwk4s2j72goyilp877iu" columns="id_user" ref-table="user" ref-schema="" ref-catalog="notes" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK_m7qyxwwk4s2j72goyilp877iu" unique="false" columns="id_user"/>
     </table>
+    <table name="role" schema="" catalog="notes" type="TABLE">
+      <column name="id_role" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="role" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_role"/>
+    </table>
     <table name="user" schema="" catalog="notes" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id_role" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FK_m7qyxwwk4s2j72goyilp877iu" table="note" schema="" catalog="notes" columns="id_user"/>
     </table>
