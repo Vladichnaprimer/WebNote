@@ -29,7 +29,6 @@ public class User  {
     @Column
     private String email;
 
-
     @Column
     private String password;
 
@@ -40,6 +39,17 @@ public class User  {
     @Column(name = "id_role")
     @Enumerated
     private UserRole idRole = UserRole.ROLE_USER;
+
+    @Column
+    private Boolean enabled = Boolean.TRUE;
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public User() {
     }

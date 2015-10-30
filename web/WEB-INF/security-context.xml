@@ -11,10 +11,11 @@
     <http auto-config="true" use-expressions="true">
 
         <intercept-url pattern="/profile**" access="permitAll"/>
+        <intercept-url pattern="/users**" access="hasRole('vladich@gmail.com')"/>
 
         <form-login
                 login-page="/index.htm"
-                default-target-url="/profile.htm"
+                default-target-url="/users/profile.htm"
                 authentication-failure-url="/index.htm?error=1"
                 username-parameter="email"
                 password-parameter="password"

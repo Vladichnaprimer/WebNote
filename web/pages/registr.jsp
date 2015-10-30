@@ -25,7 +25,7 @@
 
   <div id="container">
 
-    <form  action="${pageContext.request.contextPath}/add.htm" method="post" role="form">
+    <form  action="${pageContext.request.contextPath}/users/add.htm" method="post" role="form">
       <div class="form-group">
           <input type="text" class="form-control" name="name" placeholder="Name"  required>
       </div>
@@ -40,7 +40,6 @@
       </div>
       <br/><br/>
       <button type="submit" class="btn btn-success">Sign Up</button>
-
 
       <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}" />

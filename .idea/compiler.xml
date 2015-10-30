@@ -25,9 +25,17 @@
         <processorPath useClasspath="true" />
         <module name="NoteWeb" />
       </profile>
+      <profile default="false" name="Annotation profile for WebNoteApp" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="WebNoteApp" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
       <module name="NoteWeb" target="1.7" />
+      <module name="WebNoteApp" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

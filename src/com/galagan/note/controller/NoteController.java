@@ -19,7 +19,7 @@ public class NoteController {
     @RequestMapping(value = "/createNote", method = RequestMethod.POST)
     public String addNote(@ModelAttribute Note note)  {
         noteService.save(note);
-        return "redirect:/profile.htm";
+        return "redirect:/users/profile.htm";
     }
 
     @RequestMapping("/editor/{id}")

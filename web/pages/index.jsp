@@ -44,7 +44,7 @@
                 <input  id="mail" type="text" class="form-control" name="email"
                                     placeholder="Email" pattern="\S+@[a-z]+.[a-z]+"
                 <%-- pattern="/^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6} $/i"--%> required />
-                <span id="valid"></span>
+                <%--<span id="valid"></span>--%>
             </div>
             <br/>
             <div class="form-group">

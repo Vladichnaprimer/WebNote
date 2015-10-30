@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\Code" vcs="Git" />
-    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\WebNot" vcs="Git" />
-    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\WebNote" vcs="Git" />
-    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\WebNotes" vcs="Git" />
-    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\WebNotess" vcs="Git" />
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/WebNote" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/WebNotes" vcs="Git" />
+    <mapping directory="C:\Users\vladi\IdeaProjects\NoteWeb\NoteRepository" vcs="Git" />
   </component>
 </project>

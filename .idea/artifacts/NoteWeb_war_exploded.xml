@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="NoteWeb:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/NoteWeb_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="NoteWeb/web/Web" />
+      <element id="javaee-facet-resources" facet="WebNoteApp/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="NoteWeb" />
+          <element id="module-output" name="WebNoteApp" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />

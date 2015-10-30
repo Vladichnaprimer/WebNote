@@ -18,51 +18,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/prettify.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstraphtml5.css"/>
 
-    <title>Profile</title>
-
-    <script>
-        function showContent(link) {
-
-            var cont = document.getElementById('contentBody');
-            var loading = document.getElementById('loading');
-
-            cont.innerHTML = loading.innerHTML;
-
-            var http = createRequestObject();
-            if (http) {
-                http.open('get', link);
-                http.onreadystatechange = function () {
-                    if (http.readyState == 4) {
-                        cont.innerHTML = http.responseText;
-                    }
-                }
-                http.send(null);
-            }
-            else {
-                document.location = link;
-            }
-        }
-
-        // создание ajax объекта
-        function createRequestObject() {
-            try {
-                return new XMLHttpRequest()
-            }
-            catch (e) {
-                try {
-                    return new ActiveXObject('Msxml2.XMLHTTP')
-                }
-                catch (e) {
-                    try {
-                        return new ActiveXObject('Microsoft.XMLHTTP')
-                    }
-                    catch (e) {
-                        return null;
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Users</title>
 
 </head>
 <body>
@@ -95,37 +51,28 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email/Login</th>
-            <th>Notes List</th>
+            <th>&nbsp;</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>${user.id} </td>
-            <td>${user.name} </td>
-            <td>${user.email} </td>
-            <td>
-                <c:forEach var="note" items="${user.noteList}">
-                    <p><a href="${pageContext.request.contextPath}/editor/${note.id}.htm"><c:out
-                            value="${note.title}"/></a></p>
-                </c:forEach>
-            </td>
-        </tr>
+        <c:forEach var="u" items="${users}">
+            <tr>
+                <td>${u.id} </td>
+                <td>${u.name} </td>
+                <td>${u.email} </td>
+                <td>
+                    <form action="${pageContext.request.contextPath}/users/delete.htm" method="post">
+                        <input type="hidden" value="${u.id}" name="id"/>
+                        <button type="submit" id="submit" class="btn btn-danger">Delete</button>
+                        <input type="hidden" name="${_csrf.parameterName}"
+                               value="${_csrf.token}" />
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
 </div>
-
-
-<%--<form>
-    <input onclick="showContent('/pages/createNote.jsp') "type="button" value="Page1">
-    <input onclick="showContent('/editor.jsp')" type="button" value="Page2">
-</form>
-
-<div id="contentBody">
-</div>
-
-<div id="loading" style="display: none">
-    Laoding . . .
-</div>--%>
 
 </body>
 </html>
